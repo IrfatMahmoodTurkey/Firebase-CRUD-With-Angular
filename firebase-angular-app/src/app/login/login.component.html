@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 form-div">
+        <form [formGroup]="formData" (ngSubmit)="signIn(formData.value)">
+            <h2>Login</h2>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Account Type</label>
+                <select class="form-control" formControlName="accountType">
+                    <option value="New">New Account</option>
+                    <option value="Existing">Existing Account</option>
+                </select>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-danger" (click)="googleSignIn()">Google</button>
+          </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
